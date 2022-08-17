@@ -1,0 +1,64 @@
+*{
+}
+* a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*Header*/
+#header-menu{
+    background-image: linear-gradient(90deg, black, red);
+    height: 50px;
+    font-size: 20px;
+    justify-content: space-evenly;
+    display: flex;
+    text-align: center;
+}
+.icon-text{
+    color: azure;
+    display: flex;
+    align-items: center;
+}
+.icon-text:hover span{
+    background: linear-gradient(to right, azure 0%, blue 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+/*Profile*/
+
+#profile-avatar{
+    width: 210px;
+    height: auto;
+}
+.profile-body{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column
+}
+.profile-lable{
+    font-size: 16px;
+}
+.skill-level{
+    color: rgb(4, 231, 4);
+}
+
+.experience-content{
+    margin-top: 30px;
+}
+#hr-header{
+    border: 0;
+    height: 0.35rem;
+    margin: 1em auto;
+    display: block;
+    background-image: -webkit-linear-gradient(
+      0deg,
+      transparent,
+      #f29c38,
+      #ea3329,
+      #ff034a,
+      #e532ad,
+      #0c8cfe,
+      transparent
+    );
+}
