@@ -1,6 +1,20 @@
 import React from "react";
 
-const Content = () => {
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+const FullStack = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    fade: true,
+  };
   const skills = [
     { name: "React js", level: "Good" },
     { name: "SQL server", level: "Good" },
@@ -27,6 +41,20 @@ const Content = () => {
       source:
         "https://gitlab.com/vnhp-group/fitness-lifestyle-tech-wiz/-/tree/developer",
       video: "",
+      imageFolder: "FullStack/HealthCare/",
+      images: [
+        "z3651715456221_73ff811c077f17cf410645c2d8ab7540.jpg",
+        "z3651715591345_540d8d9dd5b3a8e4ca697a49d13451a9.jpg",
+        "z3651715995366_47cec96bc0650adb24bb3450e1615650.jpg",
+        "z3651716104861_188cb44c3e7d923e7c1dc91332286124.jpg",
+        "z3651718295738_fada528650615438065982c4d2657e41.jpg",
+        "z3651718459598_b0d474abf2e09843c3ff7359c5226372.jpg",
+        "z3651718541875_f9a89ad27849c9c28c9f6f5ce81e2710.jpg",
+        "z3651718612663_3fe4718434cc1f20242535625165839c.jpg",
+        "z3651718673216_743a275eb902ead41ba2bcf09bf1fb63.jpg",
+        "z3651718935092_e1d9ae52636deeba1259ec58c6578588.jpg",
+        "z3651718945108_5e16b3d73bbcc6bdcde5efac697c6e73.jpg",
+      ],
     },
     {
       time: "June 2022 - July 2022",
@@ -45,6 +73,13 @@ const Content = () => {
       source:
         "https://github.com/phongvan-1412/VNHP-Online-Auction/tree/develop",
       video: "",
+      imageFolder: "FullStack/OnlineAution/",
+      images: [
+        "z3651706290432_439d23d45dd8788a2cd9814d6967ea7f.jpg",
+        "z3651706411849_55a518d38080be6340e9a2d9386059b9.jpg",
+        "z3651708092831_a5162437ecdb8a1ea71c6f84de6c8f7e.jpg",
+        "z3651708254310_29adc1651755bcb3259af2f5246b7cfa.jpg",
+      ],
     },
   ];
   return (
@@ -113,6 +148,24 @@ const Content = () => {
                 <div>
                   <a href={project.video}>Link</a>
                 </div>
+                <div>
+                  <b>Images</b>
+                </div>
+                <div>
+                  <Slider {...settings}>
+                    {project.images.map((image, index) => {
+                      return (
+                        <img
+                          className="project-images"
+                          key={index}
+                          src={require("../Image/" +
+                            project.imageFolder +
+                            image)}
+                        />
+                      );
+                    })}
+                  </Slider>
+                </div>
                 <hr />
               </div>
             </div>
@@ -163,4 +216,4 @@ const Content = () => {
     </div>
   );
 };
-export default Content;
+export default FullStack;

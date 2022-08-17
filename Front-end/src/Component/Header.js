@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div id="header-menu">
       <Link
-        to="/"
+        to="/fullstack"
         className="icon-text"
         replace
       >
@@ -15,7 +15,7 @@ const Header = () => {
         </span>
       </Link>
       <Link
-        to="/"
+        to="/unity"
         className="icon-text"
         style={{ margin: "0px", padding: "0px" }}
         replace
