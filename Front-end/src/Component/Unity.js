@@ -27,8 +27,8 @@ const Unity = () => {
       position: "Fresher Unity Developer",
       labelDescription: "Web Game - Turn Base",
       description:
-        "Green Beli was founded in 2019 with a mission to reduce plastic waste, promote a green lifestyle and raise the community's environmental awareness through media campaigns.",
-      labelWork: "Main work",
+        "The project “Green Beli” started from 2019 with a mission to reduce plastic waste, promote a green lifestyle and raise community’s environmental awareness via media campaigns. ",
+      labelWork: "Main task",
       works: ["Build new feature - coffee voucher.", "Fix bug."],
       labelSource: "Link game",
       source: "https://build-dev.d325gj1lpt9b8d.amplifyapp.com/",
@@ -50,9 +50,9 @@ const Unity = () => {
       position: "Unity Developer",
       labelDescription: "PC-Third person",
       description:
-        "Main character - Elen. She need kill monster,boss and find the way to the ship",
-      labelWork: "Main work",
-      works: ["Design core game.", "Suport team.", "Fix bug."],
+        " Elen - main character, in order to escape the dangerous landscape, she must kill and overcome any monster and boss on the road, then find the way to the ship at the end.",
+      labelWork: "Main task",
+      works: ["Design core game.", " Support team as a leader.", "Fix bug."],
       labelSource: "Source code",
       source: "https://gitlab.com/teeltruong/escapeplan3dproject.git",
       video: (
@@ -180,13 +180,13 @@ const Unity = () => {
             <h4>Green Beli</h4>
             <h6>Unity Developer</h6>
             <div>
-              <span>- Join build core game.</span>
+              <span>- Join in core game building.</span>
             </div>
             <div>
-              <span>- Learn from leader,improve skill.</span>
+              <span>- Learn a lot from leader and improve many skills.</span>
             </div>
             <div>
-              <span>- Work with Game designer, Server developer.</span>
+              <span>- Have the ability to work well with Game Designer and Server Developer.</span>
             </div>
           </div>
         </div>
@@ -226,7 +226,7 @@ const Unity = () => {
           <div className="col-9">
             <h4>Green Academy</h4>
             <h6>Unity Developer</h6>
-            <span>Finished</span>
+            <span>Graduated in July 2022.</span>
           </div>
         </div>
 
