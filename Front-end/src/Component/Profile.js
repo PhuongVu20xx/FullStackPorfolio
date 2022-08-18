@@ -4,13 +4,13 @@ const Profile = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-2"></div>
-        <div className="col-2">
+        <div className="col-md-2"></div>
+        <div className="col-md-2">
           <div className="card-body">
             <img src={avatar} id="profile-avatar" alt="" />
           </div>
         </div>
-        <div className="col-6">
+        <div className="col-md-6">
           <div className="card-body profile-body">
             <h3>Vũ Xuân Phương</h3>
             <span className="profile-lable">

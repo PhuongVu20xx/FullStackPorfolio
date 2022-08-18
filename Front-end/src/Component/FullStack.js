@@ -21,6 +21,7 @@ const FullStack = () => {
     { name: "Laravel API", level: "Good" },
     { name: "English", level: "Good" },
     { name: "C#", level: "Good" },
+    { name: "Git", level: "Normal" },
   ];
   const projects = [
     {
@@ -29,7 +30,7 @@ const FullStack = () => {
       position: "Full-Stack",
       labelDescription: "Web Application",
       description:
-        "This project is about health care. Customer can register,login,view product, buy health service,online booking appoinment,pay bill online",
+        "The main purpose of this project is building a health care website, where customer can register and login in to an account in order to view products, buy health services, make online booking appointments and pay bill online.",
       labelWork: "Main work",
       works: [
         "Design Database",
@@ -40,7 +41,7 @@ const FullStack = () => {
       labelSource: "Source code",
       source:
         "https://gitlab.com/vnhp-group/fitness-lifestyle-tech-wiz/-/tree/developer",
-      video: "",
+      video: <iframe width="560" height="315" src="https://www.youtube.com/embed/JYM16JwFCSU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>,
       imageFolder: "FullStack/HealthCare/",
       images: [
         "z3651715456221_73ff811c077f17cf410645c2d8ab7540.jpg",
@@ -62,7 +63,7 @@ const FullStack = () => {
       position: "Full-Stack",
       labelDescription: "Web Application",
       description:
-        "This project is about online aution. Customer can register,login,view product, online aution(realtime),online payment",
+        " This project aims to create an online auction platform for customer. They can view available products, attend to any online auction (realtime) and then make online purchase if they win (register and login in to an account needed).",
       labelWork: "Main work",
       works: [
         "Design Database",
@@ -72,7 +73,7 @@ const FullStack = () => {
       labelSource: "Source code",
       source:
         "https://github.com/phongvan-1412/VNHP-Online-Auction/tree/develop",
-      video: "",
+      video: <iframe width="560" height="315" src="https://www.youtube.com/embed/FOOEn4aIbM8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>,
       imageFolder: "FullStack/OnlineAution/",
       images: [
         "z3651706290432_439d23d45dd8788a2cd9814d6967ea7f.jpg",
@@ -145,9 +146,7 @@ const FullStack = () => {
                 <div>
                   <b>Video</b>
                 </div>
-                <div>
-                  <a href={project.video}>Link</a>
-                </div>
+                <div>{project.video}</div>
                 <div>
                   <b>Images</b>
                 </div>
@@ -177,23 +176,27 @@ const FullStack = () => {
         <h5>ADDITIONAL INFORMATION</h5>
         <hr id="hr-header" />
         <div>
-          <span>- Proactivity, creativity,studious.</span>
+          <span>- Be proactive, creative and studious.</span>
         </div>
         <div>
           <span>- Good problem-solving skills.</span>
         </div>
         <div>
-          <span>- Good communication skills - English proficiency needed</span>
+          <span>- Good communication skills - English proficiency needed.</span>
         </div>
         <div>
           <span>
-            - Good skill with react back-end,laravel API,C# and Sql Server
+            - Work well both independently and as a member of a team to find out
+            solutions for specific requirements.
           </span>
         </div>
         <div>
+          <span>- Have the ability to work under high pressure also.</span>
+        </div>
+        <div>
           <span>
-            - Good work both independently and in teams on solutions for
-            specified requirements
+            - Especially familiar with react back-end, laravel API, C# and Sql
+            server.
           </span>
         </div>
         <hr />

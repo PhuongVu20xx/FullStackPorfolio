@@ -1,4 +1,8 @@
-*{
+#current-time{
+    position: absolute;
+    color: azure;
+    margin-top: 15px;
+    margin-left: 20px;
 }
 * a{
     text-decoration: none;
