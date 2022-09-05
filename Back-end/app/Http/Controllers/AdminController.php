@@ -25,7 +25,7 @@ class AdminController extends Controller
         DB::select("Update account 
                     set name = '".$name."',email = '".$email."',phone = '".$phone."',dob = '".$dob.
                     "',address = '".$address."',information = '".$information."',partner = '".$partner. 
-                    "' gender = '".$gender."' where id = ".$id);
+                    "', gender = '".$gender."' where id = ".$id);
 
         $exists = DB::select("select * from account where id = ".$id);
         return count($exists);
