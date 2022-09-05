@@ -16,7 +16,7 @@ function Project({
               <div className="container">
                 <div className="row">
                   <div className="d-flex justify-content-center">
-                    <div className="spinner-border" role="status">
+                    <div className="spinner-border text-dark" role="status">
                       <span className="visually-hidden">Loading...</span>
                     </div>
                   </div>
@@ -54,7 +54,7 @@ function Project({
               <div className="container">
                 <div className="row">
                   <div className="d-flex justify-content-center">
-                    <div className="spinner-border" role="status">
+                    <div className="spinner-border text-dark" role="status">
                       <span className="visually-hidden">Loading...</span>
                     </div>
                   </div>
