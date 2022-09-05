@@ -73,8 +73,7 @@ Route::post('/changebackground',[AdminController::class, 'ChangeBackground']);
 Route::post('/changecv',[AdminController::class, 'ChangeCV']);
 Route::post('/login',[AdminController::class, 'Login']);
 Route::post('/changetitlecolor',[AdminController::class, 'ChangeTitleColor']);
-Route::post('/changelablecolor',[AdminController::class, 'ChangeLableColor']);
-Route::post('/changetextcolor',[AdminController::class, 'ChangeTextColor']);
+Route::post('/changecontentcolor',[AdminController::class, 'ChangeContentColor']);
 
 
 

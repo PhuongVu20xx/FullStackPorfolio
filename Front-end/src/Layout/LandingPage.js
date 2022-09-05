@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import $ from "jquery";
 import axios from "axios";
 import {
+  FILE,
+  IMAGE,
   SELECT_ACCOUNT_INFO,
   SHOW_PROJECTS,
   SHOW_EXPERIENTS,
@@ -156,7 +158,6 @@ class LandingPage extends Component {
     return (
       <div className="container-fluid" style={{ backgroundColor: "black" }}>
         <div className="row">
-          {/* <div className="col-2"></div> */}
           <div className="col-md-4 mt-3">
             <div className="gx-3 mb-2">
               <i
@@ -166,10 +167,10 @@ class LandingPage extends Component {
               <label
                 style={{
                   fontSize: "20px",
-                  color: this.state.account.text_color,
+                  color: this.state.account.content_color,
                 }}
               >
-                Female
+                {this.state.account.gender}
               </label>
             </div>
             <div className="gx-3 mb-2">
@@ -181,7 +182,7 @@ class LandingPage extends Component {
                 className="small"
                 style={{
                   fontSize: "20px",
-                  color: this.state.account.text_color,
+                  color: this.state.account.content_color,
                 }}
               >
                 {this.state.account.dob}
@@ -196,7 +197,7 @@ class LandingPage extends Component {
                 className="small"
                 style={{
                   fontSize: "20px",
-                  color: this.state.account.text_color,
+                  color: this.state.account.content_color,
                 }}
               >
                 {this.state.account.phone}
@@ -211,7 +212,7 @@ class LandingPage extends Component {
                 className="small"
                 style={{
                   fontSize: "20px",
-                  color: this.state.account.text_color,
+                  color: this.state.account.content_color,
                 }}
               >
                 {this.state.account.email}
@@ -227,7 +228,7 @@ class LandingPage extends Component {
                 className="small"
                 style={{
                   fontSize: "20px",
-                  color: this.state.account.text_color,
+                  color: this.state.account.content_color,
                 }}
               >
                 {this.state.account.address}
@@ -250,7 +251,7 @@ class LandingPage extends Component {
                   className="col-12"
                   style={{
                     fontSize: "20px",
-                    color: this.state.account.text_color,
+                    color: this.state.account.content_color,
                   }}
                 >
                   {this.state.account.partner}
@@ -271,7 +272,7 @@ class LandingPage extends Component {
                   className="col-12"
                   style={{
                     fontSize: "20px",
-                    color: this.state.account.text_color,
+                    color: this.state.account.content_color,
                   }}
                 >
                   {this.state.account.information}
@@ -283,23 +284,23 @@ class LandingPage extends Component {
                 <button className="btn-landing-page">Skills</button>
               </a>
               <a href="#project">
-                <button className="btn-landing-page">Project</button>
+                <button className="btn-landing-page">Projects</button>
               </a>
               <a href="#information">
-                <button className="btn-landing-page">Information</button>
+                <button className="btn-landing-page">Info</button>
               </a>
               <a href="#experients">
-                <button className="btn-landing-page">Experients</button>
+                <button className="btn-landing-page">Exps</button>
               </a>
               <a href="#education">
-                <button className="btn-landing-page">Education</button>
+                <button className="btn-landing-page">Edu</button>
               </a>
               <a
-                href={`https://rynadb.herokuapp.com/Files/${this.state.account.cv}`}
+                href={`${FILE}${this.state.account.cv}`}
                 target="blank"
                 download={true}
               >
-                <button className="btn-landing-page">Down CV</button>
+                <button className="btn-landing-page">CV</button>
               </a>
             </div>
           </div>
@@ -355,12 +356,12 @@ class LandingPage extends Component {
                 <h3 id="references" className="landing-page-lable">
                   References
                 </h3>
-                <div className="gx-3 mb-2">
+                {/* <div className="gx-3 mb-2">
                   <label
                     className="small"
                     style={{
                       fontSize: "20px",
-                      color: this.state.account.text_color,
+                      color: this.state.account.content_color,
                     }}
                   >
                     Luong Tuan Kiet
@@ -380,7 +381,7 @@ class LandingPage extends Component {
                     className="small"
                     style={{
                       fontSize: "20px",
-                      color: this.state.account.text_color,
+                      color: this.state.account.content_color,
                     }}
                   >
                     0908 567 100
@@ -400,12 +401,12 @@ class LandingPage extends Component {
                     className="small"
                     style={{
                       fontSize: "20px",
-                      color: this.state.account.text_color,
+                      color: this.state.account.content_color,
                     }}
                   >
                     luongtuankiet@gmail.com
                   </label>
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -431,7 +432,7 @@ class LandingPage extends Component {
                       <button
                         key={index}
                         style={{
-                          backgroundImage: `url(https://rynadb.herokuapp.com/Images/${project.thumbnail})`,
+                          backgroundImage: `url(${IMAGE}${project.thumbnail_name})`,
                           backgroundSize: "cover",
                           backgroundRepeat: "no-repeat",
                           backgroundPosition: "center",

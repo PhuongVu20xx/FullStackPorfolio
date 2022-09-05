@@ -8,7 +8,10 @@ import Education from "./Action/Education";
 import Skills from "./Action/Skills";
 import Images from "./Action/Images";
 import Videos from "./Action/Videos";
+import Modal from "react-modal";
+
 import {
+  IMAGE,
   UPDATE_ACCOUNT_INFO,
   CHANGE_ACCOUNT_AVATAR,
   CHANGE_ACCOUNT_PASSWORD,
@@ -23,8 +26,9 @@ import {
   CHANGE_BACKGROUND,
   CHANGE_CV,
   CHANGE_TITLE_COLOR,
-  CHANGE_LABLE_COLOR,
-  CHANGE_TEXT_COLOR,
+  CHANGE_CONTENT_COLOR,
+  UPDATE_PAGE_SETTING,
+  SELECT_PAGE_SETTING,
 } from "./ServerService/API";
 
 class Profile extends Component {
@@ -45,6 +49,8 @@ class Profile extends Component {
     videosLoading: false,
     images: [],
     imagesLoading: false,
+    modalIsOpen: false,
+    pageSettings: [],
   };
   componentDidMount() {
     this.setState({ viewIndex: 1 });
@@ -118,6 +124,15 @@ class Profile extends Component {
       .post(SELECT_IMAGES)
       .then((response) => {
         self.setState({ skills: response.data });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    axios
+      .post(SELECT_PAGE_SETTING)
+      .then((response) => {
+        self.setState({ pageSettings: response.data });
       })
       .catch((err) => {
         console.log(err);
@@ -220,22 +235,25 @@ class Profile extends Component {
       const id = this.state.account.id;
       const name = $("#name").val();
       const email = $("#email").val();
-      const address = $("#address").val();
       const phone = $("#phone").val();
       const dob = $("#dob").val();
+      const address = $("#address").val();
       const information = $("#information").val();
       const partner = $("#partner").val();
+      const gender = $("#gender").val();
 
       const data = {
         id,
         name,
         email,
-        address,
         phone,
         dob,
+        address,
         information,
         partner,
+        gender,
       };
+      console.log(data);
       axios
         .post(UPDATE_ACCOUNT_INFO, data)
         .then((response) => {
@@ -322,11 +340,13 @@ class Profile extends Component {
       const name = cv.name;
       const index = name.indexOf(".");
       const img_extension = name.substr(index, index + 5);
+      const cv_name = this.state.account.cv;
 
       let data = new FormData();
       data.set("cv", cv);
       data.set("img_extension", img_extension);
       data.set("id", id);
+      data.set("cv_name", cv_name);
 
       axios
         .post(CHANGE_CV, data)
@@ -361,7 +381,7 @@ class Profile extends Component {
     };
     // change title color
     const btnChangeTitleColorOnClick = () => {
-      const color = $("#title-color").val();
+      const color = $("#lable-color").val();
       const id = this.state.account.id;
       const data = { id, color };
       axios
@@ -378,12 +398,12 @@ class Profile extends Component {
         });
     };
 
-    const btnChangeLableColorOnClick = () => {
-      const color = $("#lable-color").val();
+    const btnChangeContentColorOnClick = () => {
+      const color = $("#text-color").val();
       const id = this.state.account.id;
       const data = { id, color };
       axios
-        .post(CHANGE_LABLE_COLOR, data)
+        .post(CHANGE_CONTENT_COLOR, data)
         .then((response) => {
           if (response.data != 0) {
             alert("Update color successfull.");
@@ -396,17 +416,66 @@ class Profile extends Component {
         });
     };
 
-    const btnChangeTextColorOnClick = () => {
-      const color = $("#text-color").val();
-      const id = this.state.account.id;
-      const data = { id, color };
+    // setting modal
+    const customStyles = {
+      content: {
+        top: "50%",
+        left: "50%",
+        right: "auto",
+        bottom: "auto",
+        marginRight: "-50%",
+        transform: "translate(-50%, -50%)",
+      },
+    };
+    let subtitle;
+    const self = this;
+    function openModal() {
+      self.setState({ modalIsOpen: true });
+    }
+
+    function afterOpenModal() {
+      // references are now sync'd and can be accessed.
+      subtitle.style.color = "black";
+    }
+
+    function closeModal() {
+      self.setState({ modalIsOpen: false });
+    }
+
+    const btnChangeSettingOnClick = () => {
+      const title_color = $("#change-title-color").val();
+      const content_color = $("#change-content-color").val();
+      const link_color = $("#change-link-color").val();
+      const background_color = $("#change-background-color").val();
+      const header_color = $("#change-header-color").val();
+      const footer_color = $("#change-footer-color").val();
+      const main_color = $("#change-main-color").val();
+      const background_image = $("#change-background-image").prop("files")[0];
+      let img_extension = "";
+      if (background_image != null) {
+        const name = background_image.name;
+        const index = name.indexOf(".");
+        img_extension = name.substr(index, index + 5);
+      }
+
+      let data = new FormData();
+      data.set("background-image", background_image);
+      data.set("img_extension", img_extension);
+      data.set("title_color", title_color);
+      data.set("content_color", content_color);
+      data.set("link_color", link_color);
+      data.set("background_color", background_color);
+      data.set("header_color", header_color);
+      data.set("footer_color", footer_color);
+      data.set("main_color", main_color);
+
       axios
-        .post(CHANGE_TEXT_COLOR, data)
+        .post(UPDATE_PAGE_SETTING, data)
         .then((response) => {
-          if (response.data != 0) {
-            alert("Update color successfull.");
+          if (response.data > 0) {
+            alert("Update avatar successfull.");
           } else {
-            alert("Update color fail.");
+            alert("Update avatar fail.");
           }
         })
         .catch((err) => {
@@ -414,13 +483,13 @@ class Profile extends Component {
         });
     };
     return (
-      <div className="container-fluid" style={{backgroundColor: "black"}}>
+      <div className="container-fluid" style={{ backgroundColor: "black" }}>
         <div className="row user-account-profile">
           <div className="col-xl-4 card">
             <div className="row">
-              <div className="card-header background-header-content" >
+              <div className="card-header background-header-content">
                 <h4>
-                  <b >Profile Picture</b>
+                  <b>Profile Picture</b>
                 </h4>
               </div>
               <div className="card-body text-center background-header-body">
@@ -429,10 +498,7 @@ class Profile extends Component {
                     <img
                       className="img-user-account-profile"
                       id="avatar"
-                      src={
-                        "https://rynadb.herokuapp.com/Images/" +
-                        this.state.account.avatar
-                      }
+                      src={IMAGE + this.state.account.avatar}
                     />
                   </div>
 
@@ -445,8 +511,11 @@ class Profile extends Component {
                   </div>
 
                   <div>
-                    <button className="btn-change-profile"onClick={btnChangeAvatarOnClick}>
-                      <b >CHANGE AVATAR</b>
+                    <button
+                      className="btn-change-profile"
+                      onClick={btnChangeAvatarOnClick}
+                    >
+                      <b>CHANGE AVATAR</b>
                     </button>
                   </div>
                   <div>
@@ -454,8 +523,11 @@ class Profile extends Component {
                   </div>
 
                   <div>
-                    <button className="btn-change-profile"onClick={btnChangeBackgroundOnClick}>
-                      <b >CHANGE BACKGROUND</b>
+                    <button
+                      className="btn-change-profile"
+                      onClick={btnChangeBackgroundOnClick}
+                    >
+                      <b>CHANGE BACKGROUND</b>
                     </button>
                   </div>
 
@@ -464,8 +536,11 @@ class Profile extends Component {
                   </div>
 
                   <div>
-                    <button className="btn-change-profile"onClick={btnChangeCvOnClick}>
-                      <b >CHANGE CV</b>
+                    <button
+                      className="btn-change-profile"
+                      onClick={btnChangeCvOnClick}
+                    >
+                      <b>CHANGE CV</b>
                     </button>
                   </div>
                   <div className="mb-1">
@@ -481,53 +556,156 @@ class Profile extends Component {
                         />
                       </div>
                     </div>
-                    <button className="btn-change-profile"onClick={btnChangePasswordOnClick}>
-                      <b >CHANGE PASSWORD</b>
+                    <button
+                      className="btn-change-profile"
+                      onClick={btnChangePasswordOnClick}
+                    >
+                      <b>CHANGE PASSWORD</b>
                     </button>
                   </div>
 
                   <div>
                     <div className="row card-body">
                       <div className="col-4">
-                        <label for="title-color">
-                          <b>Title color:</b>{" "}
-                        </label>
-                        <input
-                          className="mb-2 form-control"
-                          type="color"
-                          id="title-color"
-                        />
-                        <button className="btn-change-color"onClick={btnChangeTitleColorOnClick}>
-                          <b>CHANGE TITLE COLOR</b>
-                        </button>
-                      </div>
-
-                      <div className="col-4">
                         <label for="lable-color">
-                          <b>Lable color:</b>{" "}
+                          <b>Title:</b>{" "}
                         </label>
                         <input
                           className="mb-2 form-control"
                           type="color"
                           id="lable-color"
                         />
-                        <button className="btn-change-color"onClick={btnChangeLableColorOnClick}>
-                          <b>CHANGE LABLE COLOR</b>
+                        <button
+                          className="btn-change-color"
+                          onClick={btnChangeTitleColorOnClick}
+                        >
+                          <b>TITLE COLOR</b>
                         </button>
                       </div>
 
                       <div className="col-4">
                         <label for="text-color">
-                          <b>Text color:</b>{" "}
+                          <b>Content:</b>{" "}
                         </label>
                         <input
                           className="mb-2 form-control"
                           type="color"
                           id="text-color"
                         />
-                        <button className="btn-change-color"onClick={btnChangeTextColorOnClick}>
-                          <b>CHANGE TEXT COLOR</b>
+                        <button
+                          className="btn-change-color"
+                          onClick={btnChangeContentColorOnClick}
+                        >
+                          <b>CONTENT COLOR</b>
                         </button>
+                      </div>
+                      <div className="col-4">
+                        <button
+                          className="btn-change-color"
+                          onClick={openModal}
+                          style={{ marginTop: "63px" }}
+                        >
+                          <b>CHANGE SETTINGS</b>
+                        </button>
+                        <Modal
+                          isOpen={this.state.modalIsOpen}
+                          onAfterOpen={afterOpenModal}
+                          onRequestClose={closeModal}
+                          style={customStyles}
+                          contentLabel="Example Modal"
+                          id="project-modal-settings"
+                        >
+                          <h2
+                            ref={(_subtitle) => (subtitle = _subtitle)}
+                            className="modal-title"
+                          >
+                            <b className="text-title">Settings</b>
+                            <i
+                              className="fa-solid fa-rectangle-xmark close-icon"
+                              onClick={closeModal}
+                            ></i>
+                          </h2>
+                          <div className="form-control mb-3  mt-3">
+                            <div className="container">
+                              <div className="row">
+                                <div className="col-3 mb-3">
+                                  <label className="mb-1 mt-2">
+                                    Background Image:
+                                  </label>
+                                  <input
+                                    type="file"
+                                    id="change-background-image"
+                                  />
+                                </div>
+                                <div className="col-3 mb-3 mt-2">
+                                  <label className="mb-1">Title Color:</label>
+                                  <input type="color" id="change-title-color" />
+                                </div>
+                                <div className="col-3 mb-3 mt-2">
+                                  <label
+                                    className="mb-1"
+                                    id="change-content-color"
+                                  >
+                                    Content Color:
+                                  </label>
+                                  <input type="color" />
+                                </div>
+                                <div className="col-3 mb-3 mt-2">
+                                  <label
+                                    className="mb-1"
+                                    id="change-link-color"
+                                  >
+                                    Link Color:
+                                  </label>
+                                  <input type="color" />
+                                </div>
+                                <div className="col-3 mb-3">
+                                  <label
+                                    className="mb-1"
+                                    id="change-background-color"
+                                  >
+                                    Background Color:
+                                  </label>
+                                  <input type="color" />
+                                </div>
+                                <div className="col-3 mb-3">
+                                  <label
+                                    className="mb-1"
+                                    id="change-header-color"
+                                  >
+                                    Header Color:
+                                  </label>
+                                  <input type="color" />
+                                </div>
+                                <div className="col-3 mb-3">
+                                  <label
+                                    className="mb-1"
+                                    id="change-footer-color"
+                                  >
+                                    Footer Color:
+                                  </label>
+                                  <input type="color" />
+                                </div>
+                                <div className="col-3 mb-3">
+                                  <label
+                                    className="mb-1"
+                                    id="change-main-color"
+                                  >
+                                    Main Color:
+                                  </label>
+                                  <input type="color" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <button
+                            className="btn-update"
+                            value={this.state.pageSettings.background_image}
+                            onClick={btnChangeSettingOnClick}
+                          >
+                            <b>UPDATE</b>
+                          </button>
+                        </Modal>
                       </div>
                     </div>
                   </div>
@@ -617,18 +795,35 @@ class Profile extends Component {
                   </div>
                 </div>
                 <div className="row gx-3 mb-3">
-                  <div className="col-md-12">
-                    <label className="small mb-1" htmlFor="contact">
+                  <div className="col-md-6">
+                    <label className="small mb-1">
                       <b>INFORMATION</b>
                     </label>
                     <textarea
                       className="form-control"
                       id="information"
                       type="text"
-                      cols="100"
+                      cols="50"
                       rows="5"
                       defaultValue={this.state.account.information}
                     />
+                  </div>
+                  <div className="col-md-3">
+                    <label className="small mb-1">
+                      <b>GENDER</b>
+                    </label>
+                    <br />
+                    <select
+                      id="gender"
+                      defaultValue={this.state.account.gender}
+                    >
+                      <option value={this.state.account.gender} hidden>
+                        {this.state.account.gender}
+                      </option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+                    </select>
                   </div>
                 </div>
 

@@ -1,7 +1,6 @@
 import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
 import $ from "jquery";
-import Modal from "react-modal";
 import axios from "axios";
 import { CHANGE_VIDEO_STATUS, DELETE_VIDEO } from "../ServerService/API";
 

@@ -1,55 +1,61 @@
-export const UPDATE_ACCOUNT_INFO = "https://rynadb.herokuapp.com/api/updateaccountinfo";
-export const CHANGE_ACCOUNT_AVATAR = "https://rynadb.herokuapp.com/api/changeaccountavatar";
-export const CHANGE_ACCOUNT_PASSWORD = "https://rynadb.herokuapp.com/api/changeaccountpassword";
-export const SELECT_ACCOUNT_INFO = "https://rynadb.herokuapp.com/api/selectaccountinfo";
+const API = "https://vxp-portfolio-db.herokuapp.com/api/";
+export const IMAGE = "https://vxp-portfolio-db.herokuapp.com/Images/";
+export const FILE = "https://vxp-portfolio-db.herokuapp.com/Files/";
 
-export const ADD_NEW_PROJECT = "https://rynadb.herokuapp.com/api/addnewproject";
-export const UPDATE_PROJECT_INFO = "https://rynadb.herokuapp.com/api/updateprojectinfo";
-export const CHANGE_PROJECT_THUMBNAIL = "https://rynadb.herokuapp.com/api/changeprojectthumbnail";
-export const CHANGE_PROJECT_STATUS = "https://rynadb.herokuapp.com/api/changeprojectstatus";
-export const SELECT_PROJECTS = "https://rynadb.herokuapp.com/api/selectproject";
+export const UPDATE_ACCOUNT_INFO = API + "updateaccountinfo";
+export const CHANGE_ACCOUNT_AVATAR = API + "changeaccountavatar";
+export const CHANGE_ACCOUNT_PASSWORD = API + "changeaccountpassword";
+export const SELECT_ACCOUNT_INFO = API + "selectaccountinfo";
 
-export const ADD_NEW_VIDEO = "https://rynadb.herokuapp.com/api/addnewvideo";
-export const CHANGE_VIDEO_STATUS = "https://rynadb.herokuapp.com/api/changevideostatus";
-export const DELETE_VIDEO = "https://rynadb.herokuapp.com/api/deletevideo";
-export const SELECT_VIDEOS = "https://rynadb.herokuapp.com/api/selectvideos";
+export const ADD_NEW_PROJECT = API + "addnewproject";
+export const UPDATE_PROJECT_INFO = API + "updateprojectinfo";
+export const CHANGE_PROJECT_THUMBNAIL = API + "changeprojectthumbnail";
+export const CHANGE_PROJECT_STATUS = API + "changeprojectstatus";
+export const SELECT_PROJECTS = API + "selectproject";
 
-export const ADD_NEW_IMAGE = "https://rynadb.herokuapp.com/api/addnewimage";
-export const CHANGE_IMAGE_STATUS = "https://rynadb.herokuapp.com/api/changeimagestatus";
-export const DELETE_IMAGE = "https://rynadb.herokuapp.com/api/deleteimage";
-export const SELECT_IMAGES = "https://rynadb.herokuapp.com/api/selectimages";
+export const ADD_NEW_VIDEO = API + "addnewvideo";
+export const CHANGE_VIDEO_STATUS = API + "changevideostatus";
+export const DELETE_VIDEO = API + "deletevideo";
+export const SELECT_VIDEOS = API + "selectvideos";
 
-export const ADD_NEW_EXPERIENT = "https://rynadb.herokuapp.com/api/addnewexperient";
-export const CHANGE_EXPERIENT_STATUS = "https://rynadb.herokuapp.com/api/changeexperientstatus";
-export const DELETE_EXPERIENT = "https://rynadb.herokuapp.com/api/deleteexperient";
-export const SELECT_EXPERIENTS = "https://rynadb.herokuapp.com/api/selectexperients";
+export const ADD_NEW_IMAGE = API + "addnewimage";
+export const CHANGE_IMAGE_STATUS = API + "changeimagestatus";
+export const DELETE_IMAGE = API + "deleteimage";
+export const SELECT_IMAGES = API + "selectimages";
 
-export const ADD_NEW_INFORMATION = "https://rynadb.herokuapp.com/api/addnewinformation";
-export const CHANGE_INFORMATION_STATUS = "https://rynadb.herokuapp.com/api/changeinformationtatus";
-export const DELETE_INFORMATION = "https://rynadb.herokuapp.com/api/deleteinformation";
-export const SELECT_INFORMATIONS = "https://rynadb.herokuapp.com/api/selectinformations";
+export const ADD_NEW_EXPERIENT = API + "addnewexperient";
+export const CHANGE_EXPERIENT_STATUS = API + "changeexperientstatus";
+export const DELETE_EXPERIENT = API + "deleteexperient";
+export const SELECT_EXPERIENTS = API + "selectexperients";
 
-export const ADD_NEW_EDUCATION = "https://rynadb.herokuapp.com/api/addneweducation";
-export const CHANGE_EDUCATION_STATUS = "https://rynadb.herokuapp.com/api/changeeducationstatus";
-export const DELETE_EDUCATION = "https://rynadb.herokuapp.com/api/deleteeducation";
-export const SELECT_EDUCATIONS = "https://rynadb.herokuapp.com/api/selecteducations";
+export const ADD_NEW_INFORMATION = API + "addnewinformation";
+export const CHANGE_INFORMATION_STATUS = API + "changeinformationtatus";
+export const DELETE_INFORMATION = API + "deleteinformation";
+export const SELECT_INFORMATIONS = API + "selectinformations";
 
-export const ADD_NEW_SKILL = "https://rynadb.herokuapp.com/api/addnewskill";
-export const CHANGE_SKILL_STATUS = "https://rynadb.herokuapp.com/api/changeskillstatus";
-export const DELETE_SKILL = "https://rynadb.herokuapp.com/api/deleteskill";
-export const SELECT_SKILLS = "https://rynadb.herokuapp.com/api/selectskills";
+export const ADD_NEW_EDUCATION = API + "addneweducation";
+export const CHANGE_EDUCATION_STATUS = API + "changeeducationstatus";
+export const DELETE_EDUCATION = API + "deleteeducation";
+export const SELECT_EDUCATIONS = API + "selecteducations";
 
-export const SHOW_PROJECTS = "https://rynadb.herokuapp.com/api/showprojects";
-export const SHOW_EXPERIENTS = "https://rynadb.herokuapp.com/api/showexperients";
-export const SHOW_INFORMATION = "https://rynadb.herokuapp.com/api/showinformation";
-export const SHOW_EDUCATION = "https://rynadb.herokuapp.com/api/showeducation";
-export const SHOW_SKILLS = "https://rynadb.herokuapp.com/api/showskills";
-export const SELECTED_PROJECT = "https://rynadb.herokuapp.com/api/selectedproject";
-export const SELECTED_PROJECT_VIDEOS = "https://rynadb.herokuapp.com/api/selecttedprojectvideos";
-export const SELECTED_PROJECT_IMAGES = "https://rynadb.herokuapp.com/api/selectedprojectimages";
-export const CHANGE_BACKGROUND = "https://rynadb.herokuapp.com/api/changebackground";
-export const CHANGE_CV = "https://rynadb.herokuapp.com/api/changecv";
-export const LOGIN = "https://rynadb.herokuapp.com/api/login";
-export const CHANGE_TITLE_COLOR = "https://rynadb.herokuapp.com/api/changetitlecolor";
-export const CHANGE_LABLE_COLOR = "https://rynadb.herokuapp.com/api/changelablecolor";
-export const CHANGE_TEXT_COLOR = "https://rynadb.herokuapp.com/api/changetextcolor";
+export const ADD_NEW_SKILL = API + "addnewskill";
+export const CHANGE_SKILL_STATUS = API + "changeskillstatus";
+export const DELETE_SKILL = API + "deleteskill";
+export const SELECT_SKILLS = API + "selectskills";
+
+export const SHOW_PROJECTS = API + "showprojects";
+export const SHOW_EXPERIENTS = API + "showexperients";
+export const SHOW_INFORMATION = API + "showinformation";
+export const SHOW_EDUCATION = API + "showeducation";
+export const SHOW_SKILLS = API + "showskills";
+export const SELECTED_PROJECT = API + "selectedproject";
+export const SELECTED_PROJECT_VIDEOS = API + "selecttedprojectvideos";
+export const SELECTED_PROJECT_IMAGES = API + "selectedprojectimages";
+export const CHANGE_BACKGROUND = API + "changebackground";
+export const CHANGE_CV = API + "changecv";
+export const LOGIN = API + "login";
+export const CHANGE_TITLE_COLOR = API + "changetitlecolor";
+export const CHANGE_CONTENT_COLOR = API + "changecontentcolor";
+
+export const UPDATE_PAGE_SETTING = API + "updatepagesettings";
+export const SELECT_PAGE_SETTING = API + "selectpagesettings";

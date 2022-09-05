@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import $ from "jquery";
 import Modal from "react-modal";
 import axios from "axios";
-import { CHANGE_IMAGE_STATUS, DELETE_IMAGE } from "../ServerService/API";
+import { CHANGE_IMAGE_STATUS, DELETE_IMAGE, IMAGE } from "../ServerService/API";
 
 function Images({ images }) {
   function Search() {
@@ -111,14 +111,14 @@ function Images({ images }) {
                   {currentImages.map((bh, index) => {
                     return (
                       <tr key={index} className="table-text">
-                        <td className="fit-content"><b>{(currentPage - 1) * 10 + i++}</b></td>
+                        <td className="fit-content">
+                          <b>{(currentPage - 1) * 10 + i++}</b>
+                        </td>
                         <td className="float-right-text">
                           <img
                             className="img-user-account-profile "
                             id="avatar"
-                            src={
-                              "https://rynadb.herokuapp.com/Images/" + bh.image
-                            }
+                            src={IMAGE + bh.image}
                           />
                         </td>
                         <td className="fit-content">
@@ -144,7 +144,11 @@ function Images({ images }) {
                           )}
                         </td>
                         <td className="fit-content">
-                          <button value={bh.id} onClick={btnDeleteImageOnClick} className="btn-delete-profile">
+                          <button
+                            value={bh.id}
+                            onClick={btnDeleteImageOnClick}
+                            className="btn-delete-profile"
+                          >
                             DELETE
                           </button>{" "}
                         </td>

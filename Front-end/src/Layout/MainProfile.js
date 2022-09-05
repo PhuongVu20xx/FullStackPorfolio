@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import $ from "jquery";
 import axios from "axios";
-import { SELECT_ACCOUNT_INFO } from "./ServerService/API";
+import { SELECT_ACCOUNT_INFO, SELECT_PAGE_SETTING, IMAGE } from "./ServerService/API";
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
@@ -11,6 +11,7 @@ class MainProfile extends Component {
   state = {
     account: {},
     more_information: false,
+    pageSettings: {}
   };
 
   componentDidMount() {
@@ -24,13 +25,21 @@ class MainProfile extends Component {
       .catch((err) => {
         console.log(err);
       });
+    axios
+      .post(SELECT_PAGE_SETTING)
+      .then((response) => {
+        self.setState({ pageSettings: response.data });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
   render() {
     return (
       <div
         className="container-fluid"
         style={{
-          backgroundImage: `url(https://rynadb.herokuapp.com/Files/${this.state.account.background})`,
+          backgroundImage: `url(${IMAGE}${this.state.pageSettings.background_image})`,
           height: "50vh",
           minHeight: "400px",
           width: "auto",
@@ -44,21 +53,18 @@ class MainProfile extends Component {
           data-aos="fade-right"
           data-aos-offset="300"
           data-aos-easing="ease-in-sine"
-          
         >
           <div className="col-md-1"></div>
           <img
             className="col-sm-3 p-0"
             id="main-account-profile"
-            src={
-              "https://rynadb.herokuapp.com/Images/" + this.state.account.avatar
-            }
+            src={IMAGE + this.state.account.avatar}
           />
           <div id="main-account-profile-lable">
             <h3
               style={{
                 fontSize: "30px",
-                color: this.state.account.text_color,
+                color: this.state.account.content_color,
               }}
             >
               {this.state.account.name}
@@ -69,7 +75,7 @@ class MainProfile extends Component {
                 color: this.state.account.title_color,
               }}
             >
-              3D Modeler
+              Developer
             </h3>
           </div>
         </div>
