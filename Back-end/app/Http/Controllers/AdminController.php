@@ -89,7 +89,7 @@ class AdminController extends Controller
         {
             DB::insert("insert into project (working_time,name,position,project_type,information,main_works,source_code,link_web,solfware,thumbnail_name) 
             values (?,?,?,?,?,?,?,?,?,?)",[$working_time,$name,$position,$project_type,$information,$main_works,$source_code,$link_web,$solfware,$thumbnail_name]);
-            $thumbnail = $request->file('project-thumbnail');
+            $thumbnail = $request->file('thumbnail');
             $thumbnail->move(public_path('Images'), $thumbnail_name);
             return 1;
         }
@@ -559,7 +559,7 @@ class AdminController extends Controller
 
     public function ChangeCV(Request $request)
     {
-        $cv_name = 'ttn-cv'.$request->img_extension;
+        $cv_name = 'vxp-cv'.$request->img_extension;
         $id = $request->id;
         DB::select("Update account 
                     set cv = '".$cv_name.
@@ -617,9 +617,9 @@ class AdminController extends Controller
         $id = $request->id;
         $lable_color = $request->color;
         DB::select("Update account 
-                    set lable_color = '".$lable_color.
+                    set title_color = '".$lable_color.
                     "' where id = ".$id);
-                    $exists = DB::select("select * from account where id = ".$id." and lable_color = '".$lable_color."'");
+                    $exists = DB::select("select * from account where id = ".$id." and title_color = '".$lable_color."'");
 
         if(count($exists) > 0)
         {
@@ -637,10 +637,10 @@ class AdminController extends Controller
         $text_color = $request->color;
 
         DB::select("Update account 
-            set text_color = '".$text_color.
+            set content_color = '".$text_color.
             "' where id = ".$id);
 
-            $exists = DB::select("select * from account where id = ".$id." and text_color = '".$text_color."'");
+            $exists = DB::select("select * from account where id = ".$id." and content_color = '".$text_color."'");
 
         if(count($exists) > 0)
         {
