@@ -1,5 +1,5 @@
 import React, { Component, useState } from "react";
-
+import { IMAGE } from "../ServerService/API";
 function Project({
   currentProject,
   videos,
@@ -39,9 +39,7 @@ function Project({
                         <div key={index} className="mb-3">
                           <img
                             className="selected-project-images"
-                            src={
-                              "https://rynadb.herokuapp.com/Images/" + img.image
-                            }
+                            src={IMAGE + img.image}
                           />
                         </div>
                       );
@@ -90,11 +88,23 @@ function Project({
           </div>
         </div>
         <div className="col-2">
-          <label>
-            <b className="text-title">WORKING DAYS</b>
+          <label >
+            <b className="text-title">WORKING TIME</b>
           </label>
-          <label className="small">
-            <b className="text-content">{currentProject.working_days}</b>
+          <label>
+            <b className="text-content">{currentProject.working_time}</b>
+          </label>
+          <label className="">
+            <b className="text-title">PROJECT TYPE</b>
+          </label>
+          <label className="small mb-1">
+            <b className="text-content">{currentProject.project_type}</b>
+          </label>
+          <label className="">
+            <b className="text-title">POSITION</b>
+          </label>
+          <label className="small mb-1">
+            <b className="text-content">{currentProject.position}</b>
           </label>
           <label className="">
             <b className="text-title">SOFTWARE</b>
@@ -103,34 +113,35 @@ function Project({
             <b className="text-content">{currentProject.solfware}</b>
           </label>
           <label className="">
+            <b className="text-title">MAIN WORKS</b>
+          </label>
+          <label className="small mb-1">
+            <b
+              className="text-content"
+              dangerouslySetInnerHTML={{ __html: currentProject.main_works }}
+            ></b>
+          </label>
+          <label className="">
+            <b className="text-title">SOURCE CODE</b>
+          </label>
+          <label className="small mb-1">
+            <a href={currentProject.source_code} style={{ color: "blue" }}>
+              Git
+            </a>
+          </label>
+          <label className="">
+            <b className="text-title">WEB</b>
+          </label>
+          <label className="small mb-1">
+            <a href={currentProject.link_web} style={{ color: "blue" }}>
+              Link
+            </a>
+          </label>
+          <label className="">
             <b className="text-title">INFORMATION</b>
           </label>
           <label className="small mb-1">
             <b className="text-content">{currentProject.information}</b>
-          </label>
-          <label className="">
-            <b className="text-title">VERTS</b>
-          </label>
-          <label className="small mb-1">
-            <b className="text-content">{currentProject.verts}</b>
-          </label>
-          <label className="">
-            <b className="text-title">EDGES</b>
-          </label>
-          <label className="small mb-1">
-            <b className="text-content">{currentProject.edges}</b>
-          </label>
-          <label className="">
-            <b className="text-title">FACES</b>
-          </label>
-          <label className="small mb-1">
-            <b className="text-content">{currentProject.faces}</b>
-          </label>
-          <label className="">
-            <b className="text-title">TRIS</b>
-          </label>
-          <label className="small mb-1">
-            <b className="text-content">{currentProject.tris}</b>
           </label>
         </div>
       </div>

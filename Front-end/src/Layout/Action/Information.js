@@ -75,7 +75,6 @@ function Information({ information }) {
     axios
       .post(ADD_NEW_INFORMATION, data)
       .then((response) => {
-        console.log(response.data);
         if (response.data > 0) {
           alert("Update add experient successfull.");
         } else {

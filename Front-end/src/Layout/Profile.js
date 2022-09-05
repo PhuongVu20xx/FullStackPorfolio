@@ -484,352 +484,357 @@ class Profile extends Component {
     };
     return (
       <div className="container-fluid" style={{ backgroundColor: "black" }}>
-        <div className="row user-account-profile">
-          <div className="col-xl-4 card">
-            <div className="row">
-              <div className="card-header background-header-content">
-                <h4>
-                  <b>Profile Picture</b>
-                </h4>
-              </div>
-              <div className="card-body text-center background-header-body">
-                <div className="row profile-img-form">
-                  <div>
-                    <img
-                      className="img-user-account-profile"
-                      id="avatar"
-                      src={IMAGE + this.state.account.avatar}
-                    />
-                  </div>
-
-                  <div id="avatar-img">
-                    <input
-                      type="file"
-                      id="user-avatar-img"
-                      onChange={onAvatarChange}
-                    />
-                  </div>
-
-                  <div>
-                    <button
-                      className="btn-change-profile"
-                      onClick={btnChangeAvatarOnClick}
-                    >
-                      <b>CHANGE AVATAR</b>
-                    </button>
-                  </div>
-                  <div>
-                    <input type="file" id="background" />
-                  </div>
-
-                  <div>
-                    <button
-                      className="btn-change-profile"
-                      onClick={btnChangeBackgroundOnClick}
-                    >
-                      <b>CHANGE BACKGROUND</b>
-                    </button>
-                  </div>
-
-                  <div>
-                    <input type="file" id="cv" />
-                  </div>
-
-                  <div>
-                    <button
-                      className="btn-change-profile"
-                      onClick={btnChangeCvOnClick}
-                    >
-                      <b>CHANGE CV</b>
-                    </button>
-                  </div>
-                  <div className="mb-1">
-                    <div className="card-body ">
-                      <div className="">
-                        <label className="small mb-1" htmlFor="email">
-                          <b>NEW PASSWORD</b>
-                        </label>
-                        <input
-                          className="form-control"
-                          id="new-password"
-                          type="password"
-                        />
-                      </div>
+        <div className="container">
+          <div className="row user-account-profile">
+            <div className="col-xl-4 card">
+              <div className="row">
+                <div className="card-header background-header-content">
+                  <h4>
+                    <b>Profile Picture</b>
+                  </h4>
+                </div>
+                <div className="card-body text-center background-header-body">
+                  <div className="row profile-img-form">
+                    <div>
+                      <img
+                        className="img-user-account-profile"
+                        id="avatar"
+                        src={IMAGE + this.state.account.avatar}
+                      />
                     </div>
-                    <button
-                      className="btn-change-profile"
-                      onClick={btnChangePasswordOnClick}
-                    >
-                      <b>CHANGE PASSWORD</b>
-                    </button>
-                  </div>
 
-                  <div>
-                    <div className="row card-body">
-                      <div className="col-4">
-                        <label for="lable-color">
-                          <b>Title:</b>{" "}
-                        </label>
-                        <input
-                          className="mb-2 form-control"
-                          type="color"
-                          id="lable-color"
-                        />
-                        <button
-                          className="btn-change-color"
-                          onClick={btnChangeTitleColorOnClick}
-                        >
-                          <b>TITLE COLOR</b>
-                        </button>
-                      </div>
+                    <div id="avatar-img">
+                      <input
+                        type="file"
+                        id="user-avatar-img"
+                        onChange={onAvatarChange}
+                      />
+                    </div>
 
-                      <div className="col-4">
-                        <label for="text-color">
-                          <b>Content:</b>{" "}
-                        </label>
-                        <input
-                          className="mb-2 form-control"
-                          type="color"
-                          id="text-color"
-                        />
-                        <button
-                          className="btn-change-color"
-                          onClick={btnChangeContentColorOnClick}
-                        >
-                          <b>CONTENT COLOR</b>
-                        </button>
+                    <div>
+                      <button
+                        className="btn-change-profile"
+                        onClick={btnChangeAvatarOnClick}
+                      >
+                        <b>CHANGE AVATAR</b>
+                      </button>
+                    </div>
+                    <div>
+                      <input type="file" id="background" />
+                    </div>
+
+                    <div>
+                      <button
+                        className="btn-change-profile"
+                        onClick={btnChangeBackgroundOnClick}
+                      >
+                        <b>CHANGE BACKGROUND</b>
+                      </button>
+                    </div>
+
+                    <div>
+                      <input type="file" id="cv" />
+                    </div>
+
+                    <div>
+                      <button
+                        className="btn-change-profile"
+                        onClick={btnChangeCvOnClick}
+                      >
+                        <b>CHANGE CV</b>
+                      </button>
+                    </div>
+                    <div className="mb-1">
+                      <div className="card-body ">
+                        <div className="">
+                          <label className="small mb-1" htmlFor="email">
+                            <b>NEW PASSWORD</b>
+                          </label>
+                          <input
+                            className="form-control"
+                            id="new-password"
+                            type="password"
+                          />
+                        </div>
                       </div>
-                      <div className="col-4">
-                        <button
-                          className="btn-change-color"
-                          onClick={openModal}
-                          style={{ marginTop: "63px" }}
-                        >
-                          <b>CHANGE SETTINGS</b>
-                        </button>
-                        <Modal
-                          isOpen={this.state.modalIsOpen}
-                          onAfterOpen={afterOpenModal}
-                          onRequestClose={closeModal}
-                          style={customStyles}
-                          contentLabel="Example Modal"
-                          id="project-modal-settings"
-                        >
-                          <h2
-                            ref={(_subtitle) => (subtitle = _subtitle)}
-                            className="modal-title"
+                      <button
+                        className="btn-change-profile"
+                        onClick={btnChangePasswordOnClick}
+                      >
+                        <b>CHANGE PASSWORD</b>
+                      </button>
+                    </div>
+
+                    <div>
+                      <div className="row card-body">
+                        <div className="col-4">
+                          <label for="lable-color">
+                            <b>Title:</b>{" "}
+                          </label>
+                          <input
+                            className="mb-2 form-control"
+                            type="color"
+                            id="lable-color"
+                          />
+                          <button
+                            className="btn-change-color"
+                            onClick={btnChangeTitleColorOnClick}
                           >
-                            <b className="text-title">Settings</b>
-                            <i
-                              className="fa-solid fa-rectangle-xmark close-icon"
-                              onClick={closeModal}
-                            ></i>
-                          </h2>
-                          <div className="form-control mb-3  mt-3">
-                            <div className="container">
-                              <div className="row">
-                                <div className="col-3 mb-3">
-                                  <label className="mb-1 mt-2">
-                                    Background Image:
-                                  </label>
-                                  <input
-                                    type="file"
-                                    id="change-background-image"
-                                  />
-                                </div>
-                                <div className="col-3 mb-3 mt-2">
-                                  <label className="mb-1">Title Color:</label>
-                                  <input type="color" id="change-title-color" />
-                                </div>
-                                <div className="col-3 mb-3 mt-2">
-                                  <label
-                                    className="mb-1"
-                                    id="change-content-color"
-                                  >
-                                    Content Color:
-                                  </label>
-                                  <input type="color" />
-                                </div>
-                                <div className="col-3 mb-3 mt-2">
-                                  <label
-                                    className="mb-1"
-                                    id="change-link-color"
-                                  >
-                                    Link Color:
-                                  </label>
-                                  <input type="color" />
-                                </div>
-                                <div className="col-3 mb-3">
-                                  <label
-                                    className="mb-1"
-                                    id="change-background-color"
-                                  >
-                                    Background Color:
-                                  </label>
-                                  <input type="color" />
-                                </div>
-                                <div className="col-3 mb-3">
-                                  <label
-                                    className="mb-1"
-                                    id="change-header-color"
-                                  >
-                                    Header Color:
-                                  </label>
-                                  <input type="color" />
-                                </div>
-                                <div className="col-3 mb-3">
-                                  <label
-                                    className="mb-1"
-                                    id="change-footer-color"
-                                  >
-                                    Footer Color:
-                                  </label>
-                                  <input type="color" />
-                                </div>
-                                <div className="col-3 mb-3">
-                                  <label
-                                    className="mb-1"
-                                    id="change-main-color"
-                                  >
-                                    Main Color:
-                                  </label>
-                                  <input type="color" />
+                            <b>TITLE COLOR</b>
+                          </button>
+                        </div>
+
+                        <div className="col-4">
+                          <label for="text-color">
+                            <b>Content:</b>{" "}
+                          </label>
+                          <input
+                            className="mb-2 form-control"
+                            type="color"
+                            id="text-color"
+                          />
+                          <button
+                            className="btn-change-color"
+                            onClick={btnChangeContentColorOnClick}
+                          >
+                            <b>CONTENT COLOR</b>
+                          </button>
+                        </div>
+                        <div className="col-4">
+                          <button
+                            className="btn-change-color"
+                            onClick={openModal}
+                            style={{ marginTop: "63px" }}
+                          >
+                            <b>CHANGE SETTINGS</b>
+                          </button>
+                          <Modal
+                            isOpen={this.state.modalIsOpen}
+                            onAfterOpen={afterOpenModal}
+                            onRequestClose={closeModal}
+                            style={customStyles}
+                            contentLabel="Example Modal"
+                            id="project-modal-settings"
+                          >
+                            <h2
+                              ref={(_subtitle) => (subtitle = _subtitle)}
+                              className="modal-title"
+                            >
+                              <b className="text-title">Settings</b>
+                              <i
+                                className="fa-solid fa-rectangle-xmark close-icon"
+                                onClick={closeModal}
+                              ></i>
+                            </h2>
+                            <div className="form-control mb-3  mt-3">
+                              <div className="container">
+                                <div className="row">
+                                  <div className="col-3 mb-3">
+                                    <label className="mb-1 mt-2">
+                                      Background Image:
+                                    </label>
+                                    <input
+                                      type="file"
+                                      id="change-background-image"
+                                    />
+                                  </div>
+                                  <div className="col-3 mb-3 mt-2">
+                                    <label className="mb-1">Title Color:</label>
+                                    <input
+                                      type="color"
+                                      id="change-title-color"
+                                    />
+                                  </div>
+                                  <div className="col-3 mb-3 mt-2">
+                                    <label
+                                      className="mb-1"
+                                      id="change-content-color"
+                                    >
+                                      Content Color:
+                                    </label>
+                                    <input type="color" />
+                                  </div>
+                                  <div className="col-3 mb-3 mt-2">
+                                    <label
+                                      className="mb-1"
+                                      id="change-link-color"
+                                    >
+                                      Link Color:
+                                    </label>
+                                    <input type="color" />
+                                  </div>
+                                  <div className="col-3 mb-3">
+                                    <label
+                                      className="mb-1"
+                                      id="change-background-color"
+                                    >
+                                      Background Color:
+                                    </label>
+                                    <input type="color" />
+                                  </div>
+                                  <div className="col-3 mb-3">
+                                    <label
+                                      className="mb-1"
+                                      id="change-header-color"
+                                    >
+                                      Header Color:
+                                    </label>
+                                    <input type="color" />
+                                  </div>
+                                  <div className="col-3 mb-3">
+                                    <label
+                                      className="mb-1"
+                                      id="change-footer-color"
+                                    >
+                                      Footer Color:
+                                    </label>
+                                    <input type="color" />
+                                  </div>
+                                  <div className="col-3 mb-3">
+                                    <label
+                                      className="mb-1"
+                                      id="change-main-color"
+                                    >
+                                      Main Color:
+                                    </label>
+                                    <input type="color" />
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                          <button
-                            className="btn-update"
-                            value={this.state.pageSettings.background_image}
-                            onClick={btnChangeSettingOnClick}
-                          >
-                            <b>UPDATE</b>
-                          </button>
-                        </Modal>
+                            <button
+                              className="btn-update"
+                              value={this.state.pageSettings.background_image}
+                              onClick={btnChangeSettingOnClick}
+                            >
+                              <b>UPDATE</b>
+                            </button>
+                          </Modal>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className=" col-xl-8 col-lg-12 col-md-12" id="account-detail">
-            <div className="card" id="account-detail-body">
-              <div className="card-header background-header-content">
-                <h4>
-                  <b>Account Details</b>
-                </h4>
-              </div>
-              <div className="card-body background-header-body">
-                <div className="mb-3">
-                  <label className="small mb-1" htmlFor="fullname">
-                    <b>FULL NAME</b>
-                  </label>
-                  <input
-                    className="form-control"
-                    id="name"
-                    type="text"
-                    defaultValue={this.state.account.name}
-                  />
+            <div className=" col-xl-8 col-lg-12 col-md-12" id="account-detail">
+              <div className="card" id="account-detail-body">
+                <div className="card-header background-header-content">
+                  <h4>
+                    <b>Account Details</b>
+                  </h4>
                 </div>
-
-                <div className="mb-3">
-                  <label className="small mb-1" htmlFor="email">
-                    <b>EMAIL</b>
-                  </label>
-                  <input
-                    className="form-control"
-                    id="email"
-                    defaultValue={this.state.account.email}
-                  />
-                </div>
-
-                <div className="mb-3">
-                  <label className="small mb-1" htmlFor="address">
-                    <b>ADDRESS</b>
-                  </label>
-                  <input
-                    className="form-control"
-                    id="address"
-                    type="text"
-                    defaultValue={this.state.account.address}
-                  />
-                </div>
-
-                <div className="row gx-3 mb-3">
-                  <div className="col-md-6">
-                    <label className="small mb-1" htmlFor="contact">
-                      <b>PHONE NUMBER</b>
+                <div className="card-body background-header-body">
+                  <div className="mb-3">
+                    <label className="small mb-1" htmlFor="fullname">
+                      <b>FULL NAME</b>
                     </label>
                     <input
                       className="form-control"
-                      id="phone"
-                      type="tel"
-                      defaultValue={this.state.account.phone}
+                      id="name"
+                      type="text"
+                      defaultValue={this.state.account.name}
                     />
                   </div>
-                  <div className="col-md-6">
-                    <label className="small mb-1" htmlFor="dateofbirth">
-                      <b>BIRTHDAY</b>
+
+                  <div className="mb-3">
+                    <label className="small mb-1" htmlFor="email">
+                      <b>EMAIL</b>
                     </label>
                     <input
                       className="form-control"
-                      id="dob"
-                      type="text"
-                      defaultValue={this.state.account.dob}
+                      id="email"
+                      defaultValue={this.state.account.email}
                     />
                   </div>
-                </div>
-                <div className="row gx-3 mb-3">
-                  <div className="col-md-12">
-                    <label className="small mb-1" htmlFor="contact">
-                      <b>PARTNER</b>
-                    </label>
-                    <textarea
-                      className="form-control"
-                      id="partner"
-                      type="text"
-                      cols="100"
-                      defaultValue={this.state.account.partner}
-                    />
-                  </div>
-                </div>
-                <div className="row gx-3 mb-3">
-                  <div className="col-md-6">
-                    <label className="small mb-1">
-                      <b>INFORMATION</b>
-                    </label>
-                    <textarea
-                      className="form-control"
-                      id="information"
-                      type="text"
-                      cols="50"
-                      rows="5"
-                      defaultValue={this.state.account.information}
-                    />
-                  </div>
-                  <div className="col-md-3">
-                    <label className="small mb-1">
-                      <b>GENDER</b>
-                    </label>
-                    <br />
-                    <select
-                      id="gender"
-                      defaultValue={this.state.account.gender}
-                    >
-                      <option value={this.state.account.gender} hidden>
-                        {this.state.account.gender}
-                      </option>
-                      <option value="Male">Male</option>
-                      <option value="Female">Female</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
-                </div>
 
-                <button className="btn-edit" onClick={btnEditOnClick}>
-                  <b>EDIT</b>
-                </button>
+                  <div className="mb-3">
+                    <label className="small mb-1" htmlFor="address">
+                      <b>ADDRESS</b>
+                    </label>
+                    <input
+                      className="form-control"
+                      id="address"
+                      type="text"
+                      defaultValue={this.state.account.address}
+                    />
+                  </div>
+
+                  <div className="row gx-3 mb-3">
+                    <div className="col-md-6">
+                      <label className="small mb-1" htmlFor="contact">
+                        <b>PHONE NUMBER</b>
+                      </label>
+                      <input
+                        className="form-control"
+                        id="phone"
+                        type="tel"
+                        defaultValue={this.state.account.phone}
+                      />
+                    </div>
+                    <div className="col-md-6">
+                      <label className="small mb-1" htmlFor="dateofbirth">
+                        <b>BIRTHDAY</b>
+                      </label>
+                      <input
+                        className="form-control"
+                        id="dob"
+                        type="text"
+                        defaultValue={this.state.account.dob}
+                      />
+                    </div>
+                  </div>
+                  <div className="row gx-3 mb-3">
+                    <div className="col-md-12">
+                      <label className="small mb-1" htmlFor="contact">
+                        <b>PARTNER</b>
+                      </label>
+                      <textarea
+                        className="form-control"
+                        id="partner"
+                        type="text"
+                        cols="100"
+                        defaultValue={this.state.account.partner}
+                      />
+                    </div>
+                  </div>
+                  <div className="row gx-3 mb-3">
+                    <div className="col-md-6">
+                      <label className="small mb-1">
+                        <b>INFORMATION</b>
+                      </label>
+                      <textarea
+                        className="form-control"
+                        id="information"
+                        type="text"
+                        cols="50"
+                        rows="5"
+                        defaultValue={this.state.account.information}
+                      />
+                    </div>
+                    <div className="col-md-3">
+                      <label className="small mb-1">
+                        <b>GENDER</b>
+                      </label>
+                      <br />
+                      <select
+                        id="gender"
+                        defaultValue={this.state.account.gender}
+                      >
+                        <option value={this.state.account.gender} hidden>
+                          {this.state.account.gender}
+                        </option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <button className="btn-edit" onClick={btnEditOnClick}>
+                    <b>EDIT</b>
+                  </button>
+                </div>
               </div>
             </div>
           </div>

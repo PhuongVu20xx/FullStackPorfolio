@@ -442,7 +442,7 @@ class LandingPage extends Component {
                         data-content={project.name}
                         onClick={openModalUpdateProject}
                       >
-                        {project.name}
+                        {/* {project.name} */}
                       </button>
                     );
                   })}
@@ -495,9 +495,10 @@ class LandingPage extends Component {
                   {this.state.information.map((info, index) => {
                     return (
                       <div key={index}>
-                        <label className="landing-page-information">
-                          {info.info}
-                        </label>
+                        <label
+                          className="landing-page-information"
+                          dangerouslySetInnerHTML={{ __html: info.info }}
+                        ></label>
                       </div>
                     );
                   })}
@@ -524,37 +525,38 @@ class LandingPage extends Component {
                 <div>
                   {this.state.experients.map((exp, index) => {
                     return (
-                      <div key={index} className="row">
+                      <div key={index} className="row mb-3">
                         <div className="col-2 landing-page-information">
                           {exp.work_time}
                         </div>
                         <div className="col-7">
                           <div className="row">
-                            <label className="col-12 landing-page-information">
+                            {/* <label className="col-12 landing-page-information">
                               Work place
-                            </label>
+                            </label> */}
                             <label className="col-12 landing-page-information">
                               {exp.work_place}
                             </label>
                           </div>
                           <div className="row">
-                            <label className="col-12 landing-page-information">
+                            {/* <label className="col-12 landing-page-information">
                               Position
-                            </label>
+                            </label> */}
                             <label
                               className="col-12 landing-page-information"
-                              htmlFor=""
-                            >
-                              {exp.position}
-                            </label>
+                              dangerouslySetInnerHTML={{ __html: exp.position }}
+                            ></label>
                           </div>
                           <div className="row">
-                            <label className="col-12 landing-page-information">
+                            {/* <label className="col-12 landing-page-information">
                               Experient
-                            </label>
-                            <label className="col-12 landing-page-information">
-                              {exp.experient}
-                            </label>
+                            </label> */}
+                            <label
+                              className="col-12 landing-page-information"
+                              dangerouslySetInnerHTML={{
+                                __html: exp.experient,
+                              }}
+                            ></label>
                           </div>
                         </div>
                       </div>
@@ -583,24 +585,24 @@ class LandingPage extends Component {
                 <div className="mb-4">
                   {this.state.education.map((edu, index) => {
                     return (
-                      <div key={index}>
+                      <div key={index} className="mb-3">
                         <div key={index} className="row">
                           <div className="col-2 landing-page-information">
                             {edu.learn_time}
                           </div>
                           <div className="col-7">
                             <div className="row">
-                              <label className="col-12 landing-page-information">
+                              {/* <label className="col-12 landing-page-information">
                                 School
-                              </label>
+                              </label> */}
                               <label className="col-12 landing-page-information">
                                 {edu.school}
                               </label>
                             </div>
                             <div className="row">
-                              <label className="col-12 landing-page-information">
+                              {/* <label className="col-12 landing-page-information">
                                 Course
-                              </label>
+                              </label> */}
                               <label
                                 className="col-12 landing-page-information"
                                 htmlFor=""
@@ -609,9 +611,9 @@ class LandingPage extends Component {
                               </label>
                             </div>
                             <div className="row">
-                              <label className="col-12 landing-page-information">
+                              {/* <label className="col-12 landing-page-information">
                                 Information
-                              </label>
+                              </label> */}
                               <label className="col-12 landing-page-information">
                                 {edu.info}
                               </label>

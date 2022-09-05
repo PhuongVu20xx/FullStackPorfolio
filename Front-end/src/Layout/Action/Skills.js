@@ -70,7 +70,6 @@ function Skills({ skills }) {
     const ranking = $("#ranking").val();
 
     const data = { name, ranking };
-    console.log(data);
     axios
       .post(ADD_NEW_SKILL, data)
       .then((response) => {
