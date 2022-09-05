@@ -612,26 +612,7 @@ class AdminController extends Controller
         return 0;
     }
 
-    public function ChangeLableColor(Request $request)
-    {
-        $id = $request->id;
-        $lable_color = $request->color;
-        DB::select("Update account 
-                    set title_color = '".$lable_color.
-                    "' where id = ".$id);
-                    $exists = DB::select("select * from account where id = ".$id." and title_color = '".$lable_color."'");
-
-        if(count($exists) > 0)
-        {
-            foreach($exists as $account)
-            {
-                return $account;
-            }
-        }
-        return 0;
-    }
-
-    public function ChangeTextColor(Request $request)
+    public function ChangeContentColor(Request $request)
     {
         $id = $request->id;
         $text_color = $request->color;
