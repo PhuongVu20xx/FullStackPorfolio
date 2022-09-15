@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 import $ from "jquery";
 import axios from "axios";
-import { SELECT_ACCOUNT_INFO, SELECT_PAGE_SETTING, IMAGE } from "./ServerService/API";
+import {
+  SELECT_ACCOUNT_INFO,
+  SELECT_PAGE_SETTING,
+  IMAGE,
+} from "./ServerService/API";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import background from "../Image/background.jpg";
 AOS.init();
 AOS.refresh();
 
@@ -11,7 +16,7 @@ class MainProfile extends Component {
   state = {
     account: {},
     more_information: false,
-    pageSettings: {}
+    pageSettings: {},
   };
 
   componentDidMount() {
@@ -39,7 +44,8 @@ class MainProfile extends Component {
       <div
         className="container-fluid"
         style={{
-          backgroundImage: `url(${IMAGE}${this.state.pageSettings.background_image})`,
+          // backgroundImage: `url(${IMAGE}${this.state.pageSettings.background_image})`,
+          backgroundImage: `url(${background})`,
           height: "50vh",
           minHeight: "400px",
           width: "auto",
@@ -58,7 +64,7 @@ class MainProfile extends Component {
           <img
             className="col-sm-3 p-0"
             id="main-account-profile"
-            src={IMAGE + this.state.account.avatar}
+            src={require(`../Image/1662480064-user.jpg`)}
           />
           <div id="main-account-profile-lable">
             <h3

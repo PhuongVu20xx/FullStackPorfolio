@@ -13,9 +13,10 @@ import {
   SELECTED_PROJECT_VIDEOS,
   SELECTED_PROJECT_IMAGES,
 } from "./ServerService/API";
-import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import Project from "./Action/Project";
+
+import cv from "../Image/Vu-Xuan-Phuong-Back-end-Dev.pdf";
 class LandingPage extends Component {
   state = {
     viewIndex: 1,
@@ -155,10 +156,125 @@ class LandingPage extends Component {
     function closeModalUpdateProject() {
       self.setState({ modalProjectIsOpen: false });
     }
+
+    const projects = [
+      {
+        time: "8 August 2022 - <br />12 August 2022",
+        name: "VNHP-HEALTH-CARE",
+        type: "WEB APPLICATION",
+        work: "- Database design<br/>- User profile, register, login. Admin (doctor) view history, create new bill <br/>- Support team as a leader",
+        function:
+          "- Login/Logout: Client won't be able to access any admin page if they aren't logged in. <br />" +
+          "- Admin profile: Display admin information. Client also changes their information and passwords. <br />" +
+          "- Dasboard: I have taken data from API and have displayed revenues by charts and statistic of loyal customer. <br />" +
+          "- Customer: Display all customer by a datatable. Client also sees all user's bidding and payment histories <br />" +
+          "- Feedback: Present each card for one product, you can click on comments to show all product's review. <br />" +
+          "- Product: Displayed all products of website from API, client can also activate or deactivate one product. It will show up or disappear on user page. Besides, client can add or edit any products they want <br />" +
+          "- Doctor: Displayed all doctors of website from API. Moreover, client can add new doctors <br />" +
+          "- Post: Client can add new post about heathing of website. Besides, client can add new or edit any posts they want <br />" +
+          "- Appointment: Display all current and histories appointment.",
+        solfware:
+          "- Visual studio code 2019 <br /> - SQL SERVER 2019 <br /> -Github",
+        tech: " - ReactJS, Bootstrap, CSS (front-end)<br /> - Laravel API (back-end)",
+        source: "https://gitlab.com/vnhp-group/fitness-lifestyle-tech-wiz",
+        images: "",
+        video: (
+          <iframe
+            width="546"
+            height="356"
+            src="https://www.youtube.com/embed/JYM16JwFCSU"
+            title="vnhp health care"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        ),
+      },
+      {
+        time: "8 July 2022 - <br />4 August 2022",
+        name: "VNHP-ONLINE-AUTION",
+        type: "WEB APPLICATION",
+        work: "- Database design<br />- User page: register, login, profile<br />- Support team as a leader",
+        function:
+          "- Login/Logout: Client won't be able to access any admin pages if they aren't logged in. <br />" +
+          "- Admin profile: Display admin information. Client also changes their information and passwords. <br />" +
+          "- Dasboard: I have taken data from API and have displayed revenues by charts and statistic of loyal customer. <br />" +
+          "- Customer: Display all customer by a datatable. Client also sees user's bidding histories and all payment histories.<br />" +
+          "- Feedback: Each card for one product, you can click on comment to show all product's review. <br />" +
+          "- Bill: I have displayed all bills of all customers from API, client has searched characters so client can search to look for which bill they need. Besides, I also have displayed 3 statuses of bill (Paid + Unpaid + Pending Payment). <br />" +
+          "- Bill Detail: Client can click on the detail button to view Bill Detail and call for customer to remind their payments or other issues. <br />" +
+          "- Category: All categories are display on the website from API, client can activate or deactivate any categories. It can show up or disappear flexibly on user's page. Moreover, client can add or edit any categories they want. <br />" +
+          "- Product: Displayed all products of website from API, client can also active or deactive one product. It will show up or disappear on user page. Besides, client can add new or edit any products they want",
+        solfware:
+          "- Visual studio code 2019 <br /> - SQL SERVER 2019 <br /> -Github",
+        tech: " - ReactJS, Bootstrap, CSS (front-end)<br /> - Laravel API (back-end)",
+        source: "https://github.com/phongvan-1412/VNHP-Online-Auction",
+        images: "",
+        video: (
+          <iframe
+            width="546"
+            height="371"
+            src="https://www.youtube.com/embed/FOOEn4aIbM8"
+            title="vnhp online aution"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        ),
+      },
+      {
+        time: "April 2022 -<br /> Now",
+        name: "GREEN BELI",
+        type: "WEB GAME - TURN BASE",
+        work: "- Build new feature.<br /> - coffee voucher.<br /> - Fix bug.",
+        function:
+          "The project “Green Beli” started from 2019 with a mission to reduce plastic waste, promote a green lifestyle and raise community’s environmental awareness via media campaigns. ",
+        solfware: "- Unity 2020.3.20f1",
+        tech: "C#",
+        source: "https://build-dev.d325gj1lpt9b8d.amplifyapp.com/",
+        images: "",
+        video: (
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/UFI4nEUiwyg"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        ),
+      },
+      {
+        time: "May 2022 -<br /> July 2022",
+        name: "ESCAPE PLAN 3D",
+        type: "PC-THIRD PERSON",
+        work: "- Design core game.<br />- Support team as a leader.<br /> - Fix bug.",
+        function:
+          "Elen - main character, in order to escape the dangerous landscape, she must kill and overcome any monster and boss on the road, then find the way to the ship at the end.",
+        solfware: "- Unity 2020.3.20f1",
+        tech: "C#",
+        source: "https://gitlab.com/teeltruong/escapeplan3dproject.git",
+        images: "",
+        video: (
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/CqPRpWpDY5g"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        ),
+      },
+    ];
+
+    let tmp = 0;
     return (
       <div className="container-fluid" style={{ backgroundColor: "black" }}>
         <div className="row">
-          <div className="col-md-4 mt-3">
+          <div className="col-md-2 mt-3">
             <div className="gx-3 mb-2">
               <i
                 className="fa-solid fa-person-half-dress"
@@ -296,7 +412,7 @@ class LandingPage extends Component {
                 <button className="btn-landing-page">Edu</button>
               </a>
               <a
-                href={`${FILE}${this.state.account.cv}`}
+                href={cv}
                 target="blank"
                 download={true}
               >
@@ -305,7 +421,7 @@ class LandingPage extends Component {
             </div>
           </div>
 
-          <div className="col-md-8 mt-3">
+          <div className="col-md-10 mt-3">
             <div className="row">
               <div className="col-lg-7">
                 <h3 id="skills" className="landing-page-lable">
@@ -411,70 +527,61 @@ class LandingPage extends Component {
             </div>
 
             <hr />
-            <div>
-              <h3 id="project" className="landing-page-lable">
-                Projects
-              </h3>
-              {this.state.projectsLoading ? (
-                <div className="container">
-                  <div className="row">
-                    <div className="d-flex justify-content-center">
-                      <div className="spinner-border" role="status">
-                        <span className="visually-hidden">Loading...</span>
-                      </div>
+            <h3 id="project" className="landing-page-lable">
+              Projects
+            </h3>
+            {projects.map((project, index) => {
+              return (
+                <div className="row" key={index}>
+                  <div hidden>{tmp++}</div>
+                  <div
+                    className="col-2 landing-page-information"
+                    dangerouslySetInnerHTML={{ __html: project.time }}
+                  ></div>
+                  <div className="col-10">
+                    <h4 className="landing-page-information">{project.name}</h4>
+                    <div
+                      className="landing-page-information"
+                      dangerouslySetInnerHTML={{ __html: project.type }}
+                    ></div>
+                    <div className="landing-page-lable">MAIN WORK</div>
+                    <div
+                      className="landing-page-information"
+                      dangerouslySetInnerHTML={{ __html: project.work }}
+                    ></div>
+                    <div className="landing-page-lable">FUNCTION</div>
+                    <div
+                      className="landing-page-information"
+                      dangerouslySetInnerHTML={{ __html: project.function }}
+                    ></div>
+                    <div className="landing-page-lable">SOFTWARE</div>
+                    <div
+                      className="landing-page-information"
+                      dangerouslySetInnerHTML={{ __html: project.solfware }}
+                    ></div>
+                    <div className="landing-page-lable">TECHNOLOGY</div>
+                    <div
+                      className="landing-page-information"
+                      dangerouslySetInnerHTML={{ __html: project.tech }}
+                    ></div>
+                    <div className="landing-page-lable">SOURCE</div>
+                    <div className="landing-page-information">
+                      <a href={project.source} target="blank">Link</a>
                     </div>
+                    <div className="landing-page-lable">VIDEO</div>
+                    <div className="landing-page-information">
+                      {project.video}
+                    </div>
+                    {/* <div className="landing-page-lable">IMAGES</div>
+                    <div
+                      className="landing-page-information"
+                      dangerouslySetInnerHTML={{ __html: project.tech }}
+                    ></div> */}
+                    {tmp < projects.length ? <hr /> : null}
                   </div>
                 </div>
-              ) : (
-                <div id="projects-wrapper">
-                  {this.state.projects.map((project, index) => {
-                    return (
-                      <button
-                        key={index}
-                        style={{
-                          backgroundImage: `url(${IMAGE}${project.thumbnail_name})`,
-                          backgroundSize: "cover",
-                          backgroundRepeat: "no-repeat",
-                          backgroundPosition: "center",
-                        }}
-                        className="button"
-                        value={project.id}
-                        data-content={project.name}
-                        onClick={openModalUpdateProject}
-                      >
-                        {/* {project.name} */}
-                      </button>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-            <Modal
-              isOpen={this.state.modalProjectIsOpen}
-              onAfterOpen={afterOpenModalUpdateProject}
-              onRequestClose={closeModalUpdateProject}
-              style={customStyles}
-              contentLabel="Project Modal"
-            >
-              <h2
-                ref={(_subtitle) => (subtitle = _subtitle)}
-                className="modal-title"
-              >
-                {this.state.currentProject.name}
-                <i
-                  className="fa-solid fa-rectangle-xmark close-icon"
-                  onClick={closeModalUpdateProject}
-                ></i>
-              </h2>
-
-              <Project
-                currentProject={this.state.currentProject}
-                videos={this.state.videos}
-                images={this.state.images}
-                loadingImages={this.state.loadingImages}
-                loadingVideos={this.state.loadingVideos}
-              />
-            </Modal>
+              );
+            })}
             <hr />
             <div>
               <h3 id="information" className="landing-page-lable">
