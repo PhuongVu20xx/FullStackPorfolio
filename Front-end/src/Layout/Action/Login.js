@@ -9,11 +9,11 @@ class Login extends Component {
 
   render() {
     if (localStorage.getItem("account_info") != null) {
-      window.location.href = "https://ryna69.herokuapp.com/";
+      window.location.href = "https://vxp-portfolio.herokuapp.com/";
     }
 
     function returnHome() {
-      window.location.href = "https://ryna69.herokuapp.com/";
+      window.location.href = "https://vxp-portfolio.herokuapp.com/";
     }
 
     const btnLoginOnClick = () => {
